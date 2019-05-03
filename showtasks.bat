@@ -6,11 +6,11 @@ echo RUNCRUD has errors - breaking work
 goto fail
 
 :runbrowser
-echo RUNFIREFOX
+echo RUNCHROME
 start chrome http://localhost:8080/crud/v1/task/getTasks
 if "%ERRORLEVEL%" == "0" goto openpage
 echo.
-echo RUNFIREFOX has errors - breaking work
+echo RUNCHROME has errors - breaking work
 goto fail
 
 
