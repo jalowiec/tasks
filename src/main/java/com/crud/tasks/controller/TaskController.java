@@ -25,7 +25,7 @@ public class TaskController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTasks")
+    @RequestMapping(method = RequestMethod.GET, value = "getAllTasks")
     public List<TaskDto> getTasks()
     {
         return taskMapper.maToTaskDtoList(service.getAllTasks());
