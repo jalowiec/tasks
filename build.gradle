@@ -35,13 +35,14 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.5.RELEASE'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
 
 	//Swagger
 	compile('io.springfox:springfox-swagger2:2.7.0')
 	compile('io.springfox:springfox-swagger-ui:2.7.0')
 
 
-//	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+	//providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 
 
 
