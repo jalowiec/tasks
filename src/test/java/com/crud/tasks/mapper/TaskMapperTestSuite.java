@@ -1,9 +1,7 @@
-package com.crud.tasks.trello.mapper;
+package com.crud.tasks.mapper;
 
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
-import com.crud.tasks.mapper.TaskMapper;
-import com.crud.tasks.mapper.TrelloMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
