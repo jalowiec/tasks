@@ -8,7 +8,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import javax.el.LambdaExpression;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +29,11 @@ public class TrelloServiceTest {
     @Mock
     private TrelloClient trelloClient;
 
-
     @Mock
     private AdminConfig adminConfig;
 
+    @Mock
+    private SimpleEmailService emailService;
 
 
     @Test
@@ -57,8 +61,9 @@ public class TrelloServiceTest {
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("trelloCardDto", "trelloCardDto description", "1", "1");
         CreatedTrelloCardDto createdTrelloCardDto = new CreatedTrelloCardDto("1", "CreatedTrelloCardDto", "url");
-        when(trelloClient.createNewCard(trelloCardDto)).thenReturn(createdTrelloCardDto);
         when(adminConfig.getAdminMail()).thenReturn("test@email.com");
+        when(trelloClient.createNewCard(trelloCardDto)).thenReturn(createdTrelloCardDto);
+
 
         //When
         CreatedTrelloCardDto actualCreatedTrelloCardDto = trelloService.createdTrelloCard(trelloCardDto);
@@ -70,3 +75,6 @@ public class TrelloServiceTest {
 
 }
 
+//    ofNullable(newCard).ifPresent
+  //      (card -> emailService.send(new Mail(
+    //    adminConfig.getAdminMail(),
