@@ -23,7 +23,7 @@ public class SimpleEmailService {
 
         try{
 
-            javaMailSender.send(createMailMessage(mail));
+//            javaMailSender.send(createMailMessage(mail));
             LOGGER.info("mail was sent");
 
         }catch (MailException e){
