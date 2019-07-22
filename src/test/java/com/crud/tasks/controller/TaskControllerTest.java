@@ -108,10 +108,10 @@ public class TaskControllerTest {
         mockMvc.perform(put("/v1/task/updateTask").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
-                .andExpect(status().isOk());
-                //.andExpect(jsonPath("$.id", is(1)))
-                //.andExpect(jsonPath("$.title", is("Title one")))
-                //.andExpect(jsonPath("$.content", is("Content one")));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.title", is("Title one")))
+                .andExpect(jsonPath("$.content", is("Content one")));
     }
 
     @Test
