@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import javax.el.LambdaExpression;
 import java.util.ArrayList;
@@ -23,6 +23,8 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class TrelloServiceTest {
 
+
+
     @InjectMocks
     TrelloService trelloService;
 
@@ -34,6 +36,7 @@ public class TrelloServiceTest {
 
     @Mock
     private SimpleEmailService emailService;
+
 
 
     @Test
@@ -72,6 +75,8 @@ public class TrelloServiceTest {
         assertThat(actualCreatedTrelloCardDto, samePropertyValuesAs(createdTrelloCardDto));
 
     }
+
+
 
 }
 
