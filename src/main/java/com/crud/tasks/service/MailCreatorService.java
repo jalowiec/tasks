@@ -27,12 +27,13 @@ public class MailCreatorService {
         context.setVariable("message", message);
         context.setVariable("tasks_url", "https://jalowiec.github.io/");
         context.setVariable("button", "Visit website");
-        context.setVariable("admin_name", adminConfig.getAdminName());
         context.setVariable("goodbye_message", "W razie pytan skontaktuj sie z nami:");
         context.setVariable("company_name", companyConfig.getCompanyName());
         context.setVariable("company_mail", companyConfig.getCompanyMail());
         context.setVariable("company_phone", companyConfig.getCompanyPhone());
         context.setVariable("show_button", false);
+        context.setVariable("is_friend", true);
+        context.setVariable("admin_config", adminConfig);
         return templateEngine.process("mail/created-trello-card-mail", context);
     }
 
