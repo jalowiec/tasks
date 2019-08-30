@@ -27,7 +27,7 @@ public class EmailScheduler {
     private static final String SUBJECT = "Tasks: Once a day mail";
 
     @Scheduled(cron = "0 0 10 * * *")
-    @Scheduled(fixedDelay = 10000)
+    //@Scheduled(fixedDelay = 60000)
     public void sendInformationEmail() {
 
         long size = taskRepository.count();
