@@ -31,43 +31,38 @@ public class MailCreatorService {
         functionality.add("Provides connection with Trello Account");
         functionality.add("Application allows sending tasks to Trello");
 
-        Context context = new Context();
-        context.setVariable("preview_message", "Utworzenie Trello Task");
-        context.setVariable("message", message);
-        context.setVariable("tasks_url", "https://jalowiec.github.io/");
-        context.setVariable("button", "Visit website");
-        context.setVariable("goodbye_message", "W razie pytan skontaktuj sie z nami:");
-        context.setVariable("company_name", companyConfig.getCompanyName());
-        context.setVariable("company_mail", companyConfig.getCompanyMail());
-        context.setVariable("company_phone", companyConfig.getCompanyPhone());
-        context.setVariable("show_button", false);
-        context.setVariable("is_friend", true);
-        context.setVariable("admin_config", adminConfig);
-        context.setVariable("application_functionality", functionality);
-        return templateEngine.process("mail/created-trello-card-mail", context);
+        Context contextTrelloCardEmail = new Context();
+        contextTrelloCardEmail.setVariable("preview_message", "Utworzenie Trello Task");
+        contextTrelloCardEmail.setVariable("message", message);
+        contextTrelloCardEmail.setVariable("tasks_url", "https://jalowiec.github.io/");
+        contextTrelloCardEmail.setVariable("button", "Visit website");
+        contextTrelloCardEmail.setVariable("goodbye_message", "W razie pytan skontaktuj sie z nami:");
+        contextTrelloCardEmail.setVariable("company_name", companyConfig.getCompanyName());
+        contextTrelloCardEmail.setVariable("company_mail", companyConfig.getCompanyMail());
+        contextTrelloCardEmail.setVariable("company_phone", companyConfig.getCompanyPhone());
+        contextTrelloCardEmail.setVariable("show_button", false);
+        contextTrelloCardEmail.setVariable("is_friend", true);
+        contextTrelloCardEmail.setVariable("admin_config", adminConfig);
+        contextTrelloCardEmail.setVariable("application_functionality", functionality);
+        return templateEngine.process("mail/created-trello-card-mail", contextTrelloCardEmail);
     }
 
     public String buildSchedulerEmail(String message){
 
-        List<String> functionality = new ArrayList<>();
-        functionality.add("You can manage your tasks");
-        functionality.add("Provides connection with Trello Account");
-        functionality.add("Application allows sending tasks to Trello");
 
-        Context context = new Context();
-        context.setVariable("preview_message", "Utworzenie Trello Task");
-        context.setVariable("message", message);
-        context.setVariable("tasks_url", "https://jalowiec.github.io/");
-        context.setVariable("button", "Visit website");
-        context.setVariable("goodbye_message", "W razie pytan skontaktuj sie z nami:");
-        context.setVariable("company_name", companyConfig.getCompanyName());
-        context.setVariable("company_mail", companyConfig.getCompanyMail());
-        context.setVariable("company_phone", companyConfig.getCompanyPhone());
-        context.setVariable("show_button", false);
-        context.setVariable("is_friend", true);
-        context.setVariable("admin_config", adminConfig);
-        context.setVariable("application_functionality", functionality);
-        return templateEngine.process("mail/created-scheduler-mail", context);
+        Context contextSchedulerEmail = new Context();
+        contextSchedulerEmail.setVariable("preview_message", "Utworzenie Trello Task");
+        contextSchedulerEmail.setVariable("message", message);
+        contextSchedulerEmail.setVariable("tasks_url", "https://jalowiec.github.io/");
+        contextSchedulerEmail.setVariable("button", "Visit website");
+        contextSchedulerEmail.setVariable("goodbye_message", "W razie pytan skontaktuj sie z nami:");
+        contextSchedulerEmail.setVariable("company_name", companyConfig.getCompanyName());
+        contextSchedulerEmail.setVariable("company_mail", companyConfig.getCompanyMail());
+        contextSchedulerEmail.setVariable("company_phone", companyConfig.getCompanyPhone());
+        contextSchedulerEmail.setVariable("show_button", true);
+        contextSchedulerEmail.setVariable("is_friend", true);
+        contextSchedulerEmail.setVariable("admin_config", adminConfig);
+        return templateEngine.process("mail/created-scheduler-mail", contextSchedulerEmail);
     }
 
 
